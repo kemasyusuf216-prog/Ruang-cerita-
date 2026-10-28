@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6d28d9">
+
+    <meta name="description"
+          content="Baca kumpulan cerpen dan novel romantis, horor, fantasi, drama, dan komedi di Ruang Cerita.">
+
+    <title>Ruang Cerita — Kumpulan Cerpen dan Novel</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container navbar">
+
+            <a href="#" class="logo" onclick="showHome(); return false;">
+                <span class="logo-icon">✦</span>
+                Ruang<span>Cerita</span>
+            </a>
+
+            <button class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Buka menu">
+                ☰
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#" onclick="showHome(); return false;">Beranda</a>
+                <a href="#koleksi">Koleksi Cerita</a>
+                <a href="#tentang">Tentang</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- HALAMAN BERANDA -->
+    <main id="homePage">
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container hero-content">
+
+                <div class="hero-text">
+                    <span class="eyebrow">✦ TEMPAT CERITA BERMULA</span>
+
+                    <h1>
+                        Setiap Cerita
+                        <br>
+                        Punya <span>Ruangnya.</span>
+                    </h1>
+
+                    <p>
+                        Temukan kisah yang membuatmu tersenyum,
+                        jatuh cinta, penasaran, hingga terhanyut
+                        dalam dunia imajinasi.
+                    </p>
+
+                    <a href="#koleksi" class="btn-primary">
+                        Jelajahi Cerita →
+                    </a>
+                </div>
+
+                <div class="hero-decoration">
+                    <div class="book-emoji">📚</div>
+                    <span class="floating-star star-one">✦</span>
+                    <span class="floating-star star-two">✧</span>
+                    <span class="floating-star star-three">✦</span>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- IKLAN ATAS -->
+        <div class="container">
+            <div class="ad-box" id="adTop">
+                <span class="ad-label">Advertisement</span>
+
+                <!--
+                TEMPAT IKLAN ADSTERRA ATAS
+
+                Tempel kode iklan Adsterra milikmu di sini.
+                Jangan mengubah kode asli yang diberikan Adsterra.
+                -->
+            </div>
+        </div>
+
+
+        <!-- KOLEKSI -->
+        <section class="section container" id="koleksi">
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">TEMUKAN KISAH FAVORITMU</span>
+                    <h2>Jelajahi Cerita</h2>
+                    <p>Pilih cerita dan mulai petualanganmu.</p>
+                </div>
+            </div>
+
+
+            <!-- SEARCH -->
+            <div class="search-row">
+                <div class="search-box">
+                    <span>⌕</span>
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Cari judul atau penulis..."
+                        aria-label="Cari cerita"
+                    >
+                </div>
+
+                <select id="typeFilter" aria-label="Jenis cerita">
+                    <option value="semua">Semua jenis</option>
+                    <option value="Cerpen">Cerpen</option>
+                    <option value="Novel">Novel</option>
+                </select>
+            </div>
+
+
+            <!-- FILTER GENRE -->
+            <div class="category-list" id="categoryList">
+                <button class="category-btn active" data-category="Semua">
+                    Semua
+                </button>
+
+                <button class="category-btn" data-category="Romantis">
+                    💗 Romantis
+                </button>
+
+                <button class="category-btn" data-category="Horor">
+                    👻 Horor
+                </button>
+
+                <button class="category-btn" data-category="Fantasi">
+                    ✨ Fantasi
+                </button>
+
+                <button class="category-btn" data-category="Drama">
+                    🎭 Drama
+                </button>
+
+                <button class="category-btn" data-category="Komedi">
+                    😄 Komedi
+                </button>
+            </div>
+
+
+            <!-- JUMLAH CERITA -->
+            <div class="results-info">
+                <span id="resultsCount">Memuat cerita...</span>
+            </div>
+
+
+            <!-- DAFTAR CERITA DIBUAT OLEH JAVASCRIPT -->
+            <div class="story-grid" id="storyGrid"></div>
+
+
+            <!-- JIKA CERITA TIDAK DITEMUKAN -->
+            <div class="empty-state" id="emptyState" hidden>
+                <div>📖</div>
+                <h3>Cerita tidak ditemukan</h3>
+                <p>Coba gunakan kata kunci atau kategori lainnya.</p>
+            </div>
+
+
+            <!-- IKLAN BAWAH KOLEKSI -->
+            <div class="ad-box ad-bottom" id="adBottom">
+                <span class="ad-label">Advertisement</span>
+
+                <!-- TEMPAT IKLAN ADSTERRA KOLEKSI -->
+            </div>
+
+        </section>
+
+
+        <!-- TENTANG -->
+        <section class="about-section" id="tentang">
+            <div class="container about-content">
+
+                <span class="eyebrow">TENTANG RUANG CERITA</span>
+
+                <h2>Karena Setiap Orang Punya Cerita.</h2>
+
+                <p>
+                    Ruang Cerita adalah tempat untuk menikmati
+                    beragam kisah, mulai dari cerpen singkat
+                    hingga novel yang membawa kita ke dunia baru.
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- HALAMAN BACA CERITA -->
+    <main id="readerPage" hidden>
+
+        <div class="container reader-container">
+
+            <button class="back-button" onclick="showHome()">
+                ← Kembali ke koleksi
+            </button>
+
+            <div class="reader-header">
+
+                <img
+                    id="readerCover"
+                    class="reader-cover"
+                    src=""
+                    alt="Sampul cerita"
+                >
+
+                <div class="reader-info">
+
+                    <span class="story-type" id="readerType"></span>
+
+                    <h1 id="readerTitle"></h1>
+
+                    <p id="readerAuthor"></p>
+
+                    <div class="reader-meta">
+                        <span id="readerGenre"></span>
+                        <span id="readerDuration"></span>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- IKLAN SEBELUM CERITA -->
+            <div class="ad-box reader-ad">
+                <span class="ad-label">Advertisement</span>
+
+                <!--
+                TEMPAT IKLAN ADSTERRA SEBELUM ISI CERITA.
+                Tempel kode iklan yang telah disetujui.
+                -->
+            </div>
+
+
+            <!-- ISI CERITA -->
+            <article class="reader-paper">
+
+                <div class="reader-toolbar">
+                    <button id="decreaseFont" aria-label="Perkecil tulisan">
+                        A−
+                    </button>
+
+                    <span>Ukuran teks</span>
+
+                    <button id="increaseFont" aria-label="Perbesar tulisan">
+                        A+
+                    </button>
+                </div>
+
+                <div id="storyContent" class="story-content"></div>
+
+            </article>
+
+
+            <!-- IKLAN SETELAH CERITA -->
+            <div class="ad-box reader-ad">
+                <span class="ad-label">Advertisement</span>
+
+                <!-- TEMPAT IKLAN ADSTERRA SETELAH ISI CERITA -->
+            </div>
+
+
+            <div class="reader-footer">
+                <button class="btn-primary" onclick="showHome()">
+                    Jelajahi Cerita Lain →
+                </button>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+
+            <a href="#" class="logo footer-logo"
+               onclick="showHome(); return false;">
+                ✦ Ruang<span>Cerita</span>
+            </a>
+
+            <p>
+                Temukan cerita, rasakan dunia yang berbeda.
+            </p>
+
+            <small>
+                © <span id="currentYear"></span> Ruang Cerita.
+                Hak cipta dilindungi.
+            </small>
+
+        </div>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
